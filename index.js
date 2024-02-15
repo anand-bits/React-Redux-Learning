@@ -18,5 +18,28 @@ const BUY_CAKE= 'BUY_CAKE'
  }
 
 
+ // (PreviousState, action)=> new State.
 
- 
+
+
+ // This is the PreviousState so it will be used in the reducer.
+
+ const intialState={
+    numOfCakes:10
+ }
+
+
+// Created the reducer with creating the arrow function using the previous state and action
+
+
+const reducer=(state=intialState,action)=>
+{
+     switch(action.type)
+     {
+        case BUY_CAKE:return{
+            numOfCakes:state.numOfCakes-1
+        }
+
+        default:return state
+     }
+}
