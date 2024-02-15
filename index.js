@@ -1,4 +1,8 @@
 
+const redux = require('redux')
+
+const createStore= redux.createStore
+
 
 // Created the action for redux now we have to create the reducer.
 
@@ -36,10 +40,36 @@ const reducer=(state=intialState,action)=>
 {
      switch(action.type)
      {
-        case BUY_CAKE:return{
+       
+        case BUY_CAKE: return{
+            ...state,
             numOfCakes:state.numOfCakes-1
         }
 
         default:return state
      }
 }
+
+
+// Creating the store.......
+
+
+const store=createStore(reducer)
+
+console.log("Intial State", store.getState())
+
+const unsubscribe=store.subscribe(()=>
+{
+    console.log("Updated state",store.getState())
+
+
+})
+
+
+store.dispatch(buyCake());
+store.dispatch(buyCake());
+store.dispatch(buyCake());
+
+
+unsubscribe()
+

@@ -21,3 +21,15 @@ A reducer which actually carries out the state transition depending upon the act
 The three Principle of The  React:----
 
 
+Redux Store--------------------------------------- 
+
+Responsibilites:----
+
+
+Holds Application state
+
+Allows access to state via getState()
+
+Allows state to be updated via dispatch(action)
+
+Registers Listeners via Subscribe
