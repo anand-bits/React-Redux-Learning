@@ -15,3 +15,9 @@ A store that holds the state of your application.
 An action that describes the changes in the state of the application.
 
 A reducer which actually carries out the state transition depending upon the action.
+
+
+
+The three Principle of The  React:----
+
+
