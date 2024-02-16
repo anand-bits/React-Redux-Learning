@@ -8,6 +8,8 @@ const createStore= redux.createStore
 
 const BUY_CAKE= 'BUY_CAKE'
 
+const BUY_ICECREAM='BUY_ICECREAM'
+
 
 
  function buyCake()
@@ -21,6 +23,14 @@ const BUY_CAKE= 'BUY_CAKE'
     }
  }
 
+ function buyIcecream()
+ {
+    return{
+        type:BUY_ICECREAM,
+        info:"Secon Redux action"
+    }
+ }
+
 
  // (PreviousState, action)=> new State.
 
@@ -29,26 +39,29 @@ const BUY_CAKE= 'BUY_CAKE'
  // This is the PreviousState so it will be used in the reducer.
 
  const intialState={
-    numOfCakes:10
+    numOfCakes:10,
+    numOfIcecream:20
  }
 
 
 // Created the reducer with creating the arrow function using the previous state and action
 
-
-const reducer=(state=intialState,action)=>
-{
-     switch(action.type)
-     {
-       
-        case BUY_CAKE: return{
-            ...state,
-            numOfCakes:state.numOfCakes-1
-        }
-
-        default:return state
-     }
-}
+const reducer = (state = intialState, action) => {
+    switch(action.type) {
+        case BUY_CAKE: 
+            return {
+                ...state,
+                numOfCakes: state.numOfCakes - 1
+            };
+        case BUY_ICECREAM:
+            return {
+                ...state,
+                numOfIcecream: state.numOfIcecream - 1
+            };
+        default:
+            return state;
+    }
+};
 
 
 // Creating the store.......
@@ -69,6 +82,9 @@ const unsubscribe=store.subscribe(()=>
 store.dispatch(buyCake());
 store.dispatch(buyCake());
 store.dispatch(buyCake());
+store.dispatch(buyIcecream());
+
+store.dispatch(buyIcecream());
 
 
 
