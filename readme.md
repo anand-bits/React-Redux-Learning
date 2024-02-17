@@ -53,3 +53,18 @@ Notifying Subscribers: If there are any subscribed listeners, the store notifies
 Accessing State: Components can access the current state of the store using the getState() method.
 
 Unsubscribing Listeners: If listeners are no longer needed (e.g., when a component is unmounted), they can unsubscribe from the store using the function returned by the subscribe() method.
+
+
+
+
+
+Api call:--------------
+
+
+axios:- requests to an Api End Point.
+
+redux-thunk--------------
+Define async action creators
+
+Middleware......
+
